@@ -30,7 +30,7 @@ const createSupplier = async (req, res) => {
     const { name, email, phone } = req.body;
     try {
         await db.createSupplier(name, email, phone);
-        res.redirect('/suppliers/list');
+        res.redirect('/suppliers');
     } catch (error) {
         console.error('Error creating supplier:', error);
         res.status(500).send('Internal Server Error');
@@ -71,7 +71,7 @@ const deleteSupplier = async (req, res) => {
             return res.status(404).send('Supplier not found');
         } 
         await db.deleteSupplier(supplierId);
-        res.redirect('/suppliers/list');
+        res.redirect('/suppliers');
     } catch (error) {
         console.error('Error deleting supplier:', error);
         res.status(500).send('Internal Server Error');
