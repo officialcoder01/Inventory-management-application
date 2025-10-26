@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"] {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,  
+input[type="tel"]:focus,
+input[type="number"]:focus {
+    border-color: #5cb85c;
+    box-shadow: 0 0 5px rgba(92, 184, 92, 0.5);
+    background-color: #e8f5e9;
+    outline: none;
+}
+
+textarea {
+    width: 100%;
+    max-width: 300px;
+    height: 100px; /* adjust height as you like */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none; /* disables that tiny resize handle */
+    font-family: inherit;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+textarea:focus {
+    border-color: #5cb85c;
+    box-shadow: 0 0 5px rgba(92, 184, 92, 0.5);
+    background-color: #e8f5e9;
+    outline: none;
+}
+
+button, .btn {
+    background: #5cb85c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover,
+.btn:hover {
+    background: #4cae4c;
+}
+
+.btn {
+    text-decoration: none;
+    font-size: 13px;
+}
