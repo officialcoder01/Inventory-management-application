@@ -3,7 +3,7 @@ const router = Router();
 const suppliersController = require('../controllers/suppliersController');
 
 // Route to list all suppliers
-router.get('/list', suppliersController.listSuppliers);
+router.get('/', suppliersController.listSuppliers);
 
 // Route to create a new supplier
 router.get('/create', (req, res) => {
