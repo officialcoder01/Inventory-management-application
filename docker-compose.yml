@@ -1,0 +1,42 @@
+services:
+  db:
+    image: postgres:16
+    container_name: inventory_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: ${PGUSER:-raven}
+      POSTGRES_PASSWORD: ${PGPASSWORD:-raven123}
+      POSTGRES_DB: ${PGDATABASE:-inventory_db}
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  app:
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+    container_name: inventory_app
+    environment:
+      DATABASE_URL: "${DATABASE_URL}"
+      PORT: "${PORT:-3000}"
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    develop:
+      watch:
+        - action: sync
+          path: .
+          target: /workspace
+          ignore:
+            - node_modules/
+            - .git/
+        - action: rebuild
+          path: package.json    
+    volumes:
+      - .:/workspace:delegated
+      - /workspace/node_modules
+
+volumes:
+  pgdata:
