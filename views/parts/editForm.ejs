@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/supplierForm.css">
+</head>
+<body>
+    <h1><%= title %></h1>
+
+    <form action="/parts/edit/<%= part.part_id %>" method="POST">
+        <div>
+            <label for="name">Name:</label>
+            <input 
+                type="text" 
+                id="name" 
+                name="name" 
+                value="<%= part.name %>" 
+                required
+            >
+        </div>
+
+        <div>
+            <label for="price">Price:</label>
+            <input 
+                type="number" 
+                id="price" 
+                name="price" 
+                value="<%= part.price %>" 
+                required
+            >
+        </div>
+
+        <div>
+            <label for="quantity">Quantity:</label>
+            <input 
+                type="number" 
+                id="quantity" 
+                name="quantity" 
+                value="<%= part.quantity %>" 
+                required
+            >
+        </div>
+
+        <div>
+            <label for="description">Description:</label>
+            <textarea
+                id="description" 
+                name="description" 
+                value="<%= part.description %>" 
+                required
+            ></textarea>
+        </div>
+
+        <button type="submit">Save Changes</button>
+        <a href="/parts/details/<%= part.part_id %>" class="btn">Back to Details</a>
+    </form>
+
+</body>
+</html>

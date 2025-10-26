@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Supplier Detail</title>
+        <link rel="stylesheet" href="/supplierDetail.css">
+    </head>
+    <body>
+        <h1><%= title %></h1>
+        <div class="supplier-detail">
+            <p><strong>Name:</strong> <%= supplier.name %></p>
+            <p><strong>Email:</strong> <%= supplier.email %></p>
+            <p><strong>Phone:</strong> <%= supplier.phone %></p>
+        </div>
+
+        <h2>Categories</h2>
+        <div class="dropdown">
+            <button class="dropbtn">Choose Category ▼</button>
+            <div class="dropdown-content">
+                <% categories.forEach((category) => { %>
+                    <a href="/categories/details/<%= category.category_id %>"><%= category.name %></a>
+                <% }) %>
+            </div>
+        </div>
+
+        <a href="/categories/new?supplier_id=<%= supplier.supplier_id %>" class="btn">New Category</a>
+        <a href="/suppliers/list">Back to Suppliers</a>
+    </body>
+</html>

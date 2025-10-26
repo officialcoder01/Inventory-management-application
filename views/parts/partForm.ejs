@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Supplier Form</title>
+        <link rel="stylesheet" href="/supplierForm.css">
+    </head>
+    <body>
+        <h1><%= title %></h1>
+        <form action="/parts/new/<%= categoryId %>" method="POST">
+            <input type="hidden" name="category_id" value="<%= categoryId %>">
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" required>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" required>
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" required></textarea>
+
+            <button type="submit">Add Item</button>
+            <a href="/categories/details/<%= categoryId %>" class="btn">Go Back</a>
+
+        </form>
+    </body>
+</html>

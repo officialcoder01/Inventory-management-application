@@ -1,0 +1,23 @@
+<!DOCTYE html>
+<html>
+    <head>
+        <title><%= title %></title>
+        <link rel="stylesheet" href="/categoryForm.css">
+    </head>
+    <body>
+        <h1><%= title %></h1>
+        <form action="/categories/new/<%= supplierId %>" method="POST">
+            <input type="hidden" name="supplier_id" value="<%= supplierId %>">
+            <div>
+                <label for="name">Category Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" class="description" required></textarea>
+            </div>
+            <button type="submit">Submit</button>
+            <a href="/suppliers/details/<%= supplierId %>" class="btn">Go Back</a>
+        </form>
+    </body>
+</html>
