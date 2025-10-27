@@ -33,13 +33,7 @@ CREATE TABLE IF NOT EXISTS parts (
 
 const main = async () => {
     console.log("seeding...");
-    const client = new Client({ 
-        connectionString,
-        ssl: {
-            require: true,
-            rejectUnauthorized: false
-        }
-    });
+    const client = new Client({ connectionString });
 
     await client.connect();
     await client.query(SQL);
