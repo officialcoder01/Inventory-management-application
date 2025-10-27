@@ -17,6 +17,9 @@ services:
       context: .
       dockerfile: .devcontainer/Dockerfile
     container_name: inventory_app
+    dns:
+      - 8.8.8.8
+      - 1.1.1.1
     environment:
       DATABASE_URL: "${DATABASE_URL}"
       PORT: "${PORT:-3000}"
