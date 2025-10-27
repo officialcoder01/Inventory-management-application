@@ -19,6 +19,11 @@ if (DATABASE_URL) {
   throw new Error('Database configuration missing. Set DATABASE_URL or PGUSER/PGPASSWORD/PGDATABASE in environment.');
 }
 
-const pool = new Pool({ connectionString });
+const pool = new Pool({ 
+  connectionString,
+  ssl: {
+    rejectUnauthorized: false,
+  }
+ });
 
 module.exports = pool;
