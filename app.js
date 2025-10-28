@@ -35,6 +35,10 @@ app.set('view cache', false);
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get('/', (req, res) => {
+  res.redirect('/suppliers');
+})
+
 app.use('/suppliers', suppliersRouter);
 app.use('/categories', categoriesRouter);
 app.use('/parts', partsRouter);
