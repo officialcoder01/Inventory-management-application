@@ -41,7 +41,7 @@ cd inventory-application
 docker compose up --build
 
 # 3️⃣ Seed database
-docker compose exec app node populatedb.js
+docker compose exec app node db/populatedb.js
 
 # 4️⃣ Visit the app
 http://localhost:3000
@@ -57,7 +57,7 @@ PGPORT=5432
 # 💻 Local Setup (Without Docker)
 
 npm install
-node populatedb.js
+node db/populatedb.js
 npm run dev
 # http://localhost:3000
 
@@ -75,7 +75,7 @@ Route	Description
 | -------------------------------------------- | --------------------- |
 | `docker compose up --build`                  | Start the app         |
 | `docker compose exec app bash`               | Enter container shell |
-| `docker compose exec app node populatedb.js` | Seed tables           |
+| `docker compose exec app node db/populatedb.js` | Seed tables           |
 | `docker compose down`                        | Stop containers       |
 
 
